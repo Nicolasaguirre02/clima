@@ -185,24 +185,24 @@ function mostrarClima(idClima, temp, nombre, maximo, minimo, descripcion){
 
   /* lluvia */
   if((idClima >= 300 && idClima <=531) || (idClima >= 701 && idClima <= 781 )){
-    document.getElementById("body").style.backgroundImage = "url(../img/lluvia.jpg)"
-    iconoTiempo.src = '../icono/lluvia.png'
+    document.getElementById("body").style.backgroundImage = "url(../img/lluvia.jpg)";
+    iconoTiempo.src = '../icono/lluvia.png';
 
   }else if(idClima >= 600 && idClima <= 622){ /* nieve */
-    document.getElementById("body").style.backgroundImage = "url(../img/nieve.jpg)"
-    iconoTiempo.src = '../icono/nieve.png'
+    document.getElementById("body").style.backgroundImage = "url(img/nieve.jpg)";
+    iconoTiempo.src = 'icono/nieve.png';
 
   }else if(idClima >= 801 && idClima <= 804){/* nublado */
-    document.getElementById("body").style.backgroundImage = "url(../img/nublado.jpg)"
-    iconoTiempo.src = '../icono/nublado.png'
+    document.getElementById("body").style.backgroundImage = "url(img/nublado.jpg)";
+    iconoTiempo.src = 'icono/nublado.png';
 
   }else if(idClima >= 200 && idClima <= 232){/* tormenta */
-    document.getElementById("body").style.backgroundImage = "url(../img/tormenta.jpg)"
-    iconoTiempo.src = '../icono/tormenta.png'
+    document.getElementById("body").style.backgroundImage = "url(img/tormenta.jpg)";
+    iconoTiempo.src = 'icono/tormenta.png';
 
   }else if(idClima == 800){/* Soleado */
-  document.getElementById("body").style.backgroundImage = "url(../img/soleado.jpg)"
-  iconoTiempo.src = '../icono/soleado.png'
+  document.getElementById("body").style.backgroundImage = "url(img/soleado.jpg)"
+  iconoTiempo.src = 'icono/soleado.png'
   }
  
 
@@ -273,12 +273,6 @@ async function guardarPeriodo() {
 function mostrarPeriodo( ){
   const contenedor = document.getElementById("contenedor");
 
-  /* console.log("nombre periodo nuevo", nombre)
-  console.log("hora y fecha", listaPeriodo[0][0].dt_txt);
-  console.log("Descripcion", listaPeriodo[0][0].weather[0].description);
-  console.log("tiempo periodo",listaPeriodo[0][0].main.temp);
-  console.log("idIcono periodo", listaPeriodo[0][0].weather[0].id)
- */
 
   for(const listaDatos of listaPeriodo){
 
@@ -341,19 +335,19 @@ function validarIdIcono(idClima){
   let respuesta = ""
 
   if((idClima >= 300 && idClima <=531) || (idClima >= 701 && idClima <= 781 )){
-    respuesta = '../icono/lluvia.png'
+    respuesta = 'icono/lluvia.png';
 
-  }else if(idClima >= 600 && idClima <= 622){"nieve"
-    respuesta = '../icono/lluvia.png'
+  }else if(idClima >= 600 && idClima <= 622){
+    respuesta = 'icono/lluvia.png';
 
-  }else if(idClima >= 801 && idClima <= 804){"nublado"
-    respuesta = '../icono/nublado.png'
+  }else if(idClima >= 801 && idClima <= 804){
+    respuesta = 'icono/nublado.png'
 
-  }else if(idClima >= 200 && idClima <= 232){"tormenta"
-    respuesta = '../icono/tormenta.png'
+  }else if(idClima >= 200 && idClima <= 232){
+    respuesta = 'icono/tormenta.png'
 
-  }else if(idClima == 800){"sol"
-    respuesta = '../icono/soleado.png'
+  }else if(idClima == 800){
+    respuesta = 'icono/soleado.png'
 
   }
 
@@ -374,7 +368,7 @@ function guardarEnHistorial(busqueda) {
 function mostrarHistorial() {
   
   const historial = JSON.parse(localStorage.getItem('historial')) || [];
-  console.log('Historial de búsquedas:', historial);
+
 
   listarHistorial(historial);
 }
