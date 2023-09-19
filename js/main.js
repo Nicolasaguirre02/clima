@@ -193,8 +193,8 @@ function mostrarClima(idClima, temp, nombre, maximo, minimo, descripcion){
     iconoTiempo.src = '../icono/nieve.png'
 
   }else if(idClima >= 801 && idClima <= 804){/* nublado */
-    document.getElementById("body").style.backgroundImage = "url(/img/nublado.jpg)"
-    iconoTiempo.src = '/icono/nublado.png'
+    document.getElementById("body").style.backgroundImage = "url(../img/nublado.jpg)"
+    iconoTiempo.src = '../icono/nublado.png'
 
   }else if(idClima >= 200 && idClima <= 232){/* tormenta */
     document.getElementById("body").style.backgroundImage = "url(../img/tormenta.jpg)"
