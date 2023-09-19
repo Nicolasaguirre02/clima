@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body id="body">
+    
+  <nav class="navbar navbar-dark ">
+      <div class="container">
+        
+        <button class="navbar-toggler" style="color: white; backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.144);"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <h2 style="font-size: 3vh">Ver historial</h2>
+        </button>
+
+        <input class="navbar-brand" type="text" id="inputMapa" placeholder="Ingrese una ciudad">
+
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" id="eliminarHist" class="btn btn-outline-warning">Eliminar historial</button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body" id="contenedorListado">
+
+          </div>
+        </div>
+      </div>
+  </nav>
+
+
+
+
+
+  <div  class="container-fluid" >
+      
+      
+
+    <main>
+
+        <div class="row">
+
+          <div id="cargarTimepo" class="col-md-6 d-flex justify-content-center align-items-center  " >          
+            <div>
+              <div   class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+                      
+              </div>
+            </div>
+          </div>
+
+
+          <div id="contenedorTarjetaTiempo" class="col-md-6 d-flex justify-content-center d-none">
+              
+              <div id="tarjetaTiempo">
+                  
+                  <h2 id="tarjetaTiempo-titulo"></h2>
+                  <p id="tarjetaTiempo-descripcion"></p>
+
+                  <div  class="d-flex align-items-center  flex-column ">
+                      <img class="animate__animated animate__swing" id="iconoTiempo" src="" alt="">
+                      
+                      <p id="tarjetaTiempo-temp"></p>
+                      <p id="tarjetaTiempo-minMax" ></p>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="col-md-6  ">
+
+              <div id="mapa"  style="height: 400px;"> 
+                  
+              </div>  
+
+              <div  class="d-flex justify-content-center align-items-center" style="height: 100%;" >
+                  <div id="cargaMapa"   class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+                      
+                  </div>
+              </div>
+                  
+                
+
+          </div>
+
+
+        </div>
+
+    </main>
+
+
+      <!-- Periodos -->
+
+    <div class="contenedor-flecha-derecha">
+      <button type="button" id="btnIzquierdo"  >
+        <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="black" class="bi bi-arrow-left-circle-fill boton" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+        </svg>
+      </button>
+    </div>
+
+      
+    <div  class="d-flex justify-content-center align-items-center " id="cargarPeriodo" style="margin-top: 5%; height: 30vh;" >
+      <div id="cargaMapa"   class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+          
+      </div>
+    </div>
+    
+
+    <div class="row d-flex justify-content-center d-none" id="ContenedorPeriodo" >
+        <div id="contenedor">
+            
+
+        </div>
+    </div>
+
+    <div class="contenedor-flecha-izquierda">
+
+      <BUtton id="btnDerecho">
+          
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-arrow-right-circle-fill boton" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+        </svg>
+
+      </BUtton>
+    
+    </div>
+
+        
+
+  </div>
+
+  <!-- AIzaSyDpygQ7yZ5lniprcjQUG_nrS6q-FhZvTxI -->
+  <script async src="https://maps.googleapis.com/maps/api/js?key=&libraries=places" defer></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+#body{
+    margin: 0px;
+    padding: 0px;
+
+    background-color: cadetblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contenedorBuscador{
+    height: 10vh;
+    padding-top: 10px;
+    z-index: 2;
+}
+
+#inputMapa{
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.144);
+
+    width: 40%;
+    height: 35px;
+    border-radius: 15px;
+    color: white;
+    border: 1px solid white;   
+    text-indent: 20px;
+    outline: none;
+  }
+
+#botonBuscar{
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 50px;
+    border: 1px solid white;
+    outline: none;
+    transition: transform 0.3s ease;}
+#botonBuscar:hover{
+    transform: scale(1.1);
+}
+
+input::placeholder {
+    color: white; 
+}
+
+#buscador{
+    border: 1px solid yellow;
+    width: 20%;
+    height: 20vh;
+}
+
+
+
+/* periodos */
+
+#ContenedorPeriodo{
+    margin-top: 5vh;
+    position: relative;
+}
+
+  
+#contenedor {
+   
+
+
+
+    width: 90%; /* Ancho máximo del contenedor */
+    height: 40vh; /* Altura automática según el contenido */
+    white-space: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    scroll-behavior: smooth;
+    
+  }
+#contenedor::-webkit-scrollbar {
+  display: none;
+}
+
+
+#contenedor .elemento {
+
+
+  display: inline-block;
+
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.568);
+
+  width: 200px;
+  height: 85% ;
+  margin: 15px ; /* Espacio entre elementos */ 
+  color: #fff;
+  border-radius: 5px;
+  
+
+  
+}
+
+#contenedor .elemento  .periodo-icono{
+  margin: 0px;
+  padding: 0px;
+  width: 40%;
+  
+}
+
+#contenedor .elemento  .periodo-dia{
+  font-size: 70%; 
+  padding-left: 5%;
+  padding-top: 5%;
+  
+}
+
+#contenedor .elemento  .periodo-descripcion{
+  font-size: 65%; 
+  padding: 0px; 
+  margin: 0px; 
+  padding-left: 5%;
+}
+
+
+.contenedor-flecha-derecha{
+  position: absolute;
+  width: 30px;
+  color: rgba(255, 255, 255, 0.774);
+  z-index: 1;
+  top: 85%;
+  left: 2%;
+}
+
+#btnDerecho{
+  border: none; 
+  background-color: transparent;
+}
+
+#btnIzquierdo{
+  border: none; 
+  background-color: transparent;
+}
+
+.contenedor-flecha-izquierda{
+  position: absolute;
+  width: 30px;
+  color: black;
+  top: 87%;
+  left: 95.5%;
+  z-index: 1;
+}
+
+.boton{
+  color: rgba(0, 0, 0, 0.11);
+  width: 30px;
+  height: 30px;
+  
+}
+.boton:hover{
+  color: rgb(0, 0, 0);
+}
+
+
+
+/* Nueo */
+#tarjetaTiempo{
+  border-radius: 50px;
+  color: white;
+  width: 55vh;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.356);
+  padding: 25px 0px 25px 0px;
+}
+
+#tarjetaTiempo #tarjetaTiempo-titulo{
+  font-size: 25px;
+  padding-left: 5%;
+}
+
+#tarjetaTiempo #tarjetaTiempo-descripcion{
+  font-size: 15px;
+  padding-left: 5%;
+}
+
+#iconoTiempo{
+  width: 30%;
+}
+
+.animate__swing {
+  animation: swing infinite;
+}
+
+#tarjetaTiempo-temp{
+  margin: 0px;
+  font-size: 10vh;
+  font-weight: bold;
+}
+
+#tarjetaTiempo-minMax{
+  margin: 0px;
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+
+/* Mapa */
+#mapa{
+  border: 0px;
+  border-radius: 8px;
+  width: 95%;
+  
+
+  display: none;
+  
+}
+
+@media  (max-width: 1100px) {
+#contenedor {
+height: 25vh;
+}
+
+.elemento {
+width: 25%;
+}
+}
+
+
+
+@media  (max-width: 550px) {
+  #contenedor {
+    height: 18vh;
+
+  }
+
+  .elemento {
+    width: 35%;
+  }
+} 
+
+
+@media (max-width: 768px) {
+  #contenedorMapa{
+    display: none;
+  }
+    .contenedorTiempo .tiempoActual{
+        text-align: center;
+    }
+
+    .contenedor-1 #contenedorCiudad{
+        padding-left: 0%;
+    }
+
+    /* contenedor-1 */
+    .contenedorTiempo .tiempoActual .contenedor-1 h1{
+        font-size: 6vh;  
+        font-weight: 600;
+     }
+     .contenedorTiempo .tiempoActual .contenedor-1 img{
+       margin-left: 0%;
+    }
+    .contenedorTiempo .tiempoActual .contenedor-1 h2{
+        font-size: 3vh;
+    }
+    .contenedorTiempo .tiempoActual .contenedor-1 h3{
+        font-size: 2vh;
+    }
+
+    /* Contenedor-2 */
+    #grado{
+        font-size: 10vh;
+        font-weight: 800;
+    }
+
+    #contenedor {
+        height: 20vh;
+      }
+    
+      .elemento {
+        width: 28%;
+      }
+    
+      .contenedor-flecha-derecha{
+        display:none;
+      }
+
+      .contenedor-flecha-izquierda{
+        display: none;
+      }
+}
+
+
+
+@media  (max-width: 1090px) {
+  .elemento-contenido{
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr   ;
+
+    grid-template-areas: "dia dia"  "descripcion descripcion"  "icono icono" "tiempo hora";
+    row-gap: 3%;
+    color: white;
+    padding-top: 5px;
+    align-items: center;
+  } 
+}
+
+
+
+
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+ #mapa {
+  height: 100%;
+  width: 90%;
+}
+
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
