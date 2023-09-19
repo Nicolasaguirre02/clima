@@ -81,7 +81,7 @@ function verAutoCompletado(){
     document.getElementById("ContenedorPeriodo").classList.add('d-none');
 
     const lugar = inputAutocompletado.getPlace();
-    console.log(lugar.geometry.location)
+    
     map.setCenter(lugar.geometry.location);
     marker.setPosition(lugar.geometry.location)
 
@@ -138,7 +138,7 @@ async function obtenerClima() {
     }
 
     const data = await respuesta.json();
-    console.log("mi respuesta", data)
+    
     return data;
   } catch (error) {
     console.error('Hubo un problema con la solicitud:', error);
@@ -148,7 +148,7 @@ async function obtenerClima() {
 async function guardarClima() {
   try {
     const datosClima = await obtenerClima();
-    console.log('Datos del clima:', datosClima);
+    
 
 
     const { main, name: nombre, weather } = datosClima;
@@ -216,10 +216,7 @@ function mostrarClima(idClima, temp, nombre, maximo, minimo, descripcion){
   mensajeExitoso("Busqueda correcta "+nuevoHistorial.mensajeHisorial()+"º")
 }
 
-/* function cambiarKelvin(temp){
-  return parseInt(temp - 273.15);
-}
- */
+
 const cambiarKelvin = temp => parseInt(temp - 273.15);
 
 /* Fin clima al momento */
@@ -249,23 +246,14 @@ async function obtenerPeriodo() {
 async function guardarPeriodo() {
   try {
     const datosPeriodo = await obtenerPeriodo();
-    console.log('Datos PERIODO:', datosPeriodo);
 
-    let {/* city,  */list} = datosPeriodo;
-    /* let {name: nombreCiudad} = city */
 
+    let {list} = datosPeriodo;
 
     listaPeriodo.push(list)
-
-    /* console.log("nombre del periodo", nombreCiudad);
-    console.log("lista de periodo", listaPeriodo) */
-
-    mostrarPeriodo()
-
-    
+    mostrarPeriodo()  
 
   } catch (error) {
-    /* PONER UN MENSAJE DE ERROR ACA */
     mensajeError("Error al mostrar el periodo");
   }
 }
@@ -338,7 +326,7 @@ function validarIdIcono(idClima){
     respuesta = 'icono/lluvia.png';
 
   }else if(idClima >= 600 && idClima <= 622){
-    respuesta = 'icono/lluvia.png';
+    respuesta = 'icono/nieve.png';
 
   }else if(idClima >= 801 && idClima <= 804){
     respuesta = 'icono/nublado.png'
@@ -375,7 +363,6 @@ function mostrarHistorial() {
 
 /* mostrar gistorial */
 function listarHistorial(listaHistorial){
-  console.log("soy historial")
   const contenedorListado = document.getElementById("contenedorListado");
 
   contenedorListado.innerHTML="";
