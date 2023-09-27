@@ -186,7 +186,7 @@ function mostrarClima(idClima, temp, nombre, maximo, minimo, descripcion){
   /* lluvia */
   if((idClima >= 300 && idClima <=531) || (idClima >= 701 && idClima <= 781 )){
     document.getElementById("body").style.backgroundImage = "url(img/lluvia.jpg)";
-    iconoTiempo.src = '../icono/lluvia.png';
+    iconoTiempo.src = 'icono/lluvia.png';
 
   }else if(idClima >= 600 && idClima <= 622){ /* nieve */
     document.getElementById("body").style.backgroundImage = "url(img/nieve.jpg)";
