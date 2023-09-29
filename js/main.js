@@ -111,6 +111,13 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       function (error) {
         mensajeError("Activa la geolocalización");
+        latitud =-34.6118
+        longitud = -58.4173
+        initMap();
+        document.getElementById("mapa").style.display = "flex";
+        document.getElementById("cargaMapa").style.display = "none";
+        guardarClima();
+        guardarPeriodo();
       }
     );
   } else {
