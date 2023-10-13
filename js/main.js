@@ -192,23 +192,23 @@ function mostrarClima(idClima, temp, nombre, maximo, minimo, descripcion){
 
   /* lluvia */
   if((idClima >= 300 && idClima <=531) || (idClima >= 701 && idClima <= 781 )){
-    document.getElementById("body").style.backgroundImage = "url(img/lluvia.jpg)";
+    document.getElementById("body").style.backgroundImage = "url(img/lluvia.webp)";
     iconoTiempo.src = 'icono/lluvia.png';
 
   }else if(idClima >= 600 && idClima <= 622){ /* nieve */
-    document.getElementById("body").style.backgroundImage = "url(img/nieve.jpg)";
+    document.getElementById("body").style.backgroundImage = "url(img/nieve.webp)";
     iconoTiempo.src = 'icono/nieve.png';
 
   }else if(idClima >= 801 && idClima <= 804){/* nublado */
-    document.getElementById("body").style.backgroundImage = "url(img/nublado.jpg)";
+    document.getElementById("body").style.backgroundImage = "url(img/nublado.webp)";
     iconoTiempo.src = 'icono/nublado.png';
 
   }else if(idClima >= 200 && idClima <= 232){/* tormenta */
-    document.getElementById("body").style.backgroundImage = "url(img/tormenta.jpg)";
+    document.getElementById("body").style.backgroundImage = "url(img/tormenta.webp)";
     iconoTiempo.src = 'icono/tormenta.png';
 
   }else if(idClima == 800){/* Soleado */
-  document.getElementById("body").style.backgroundImage = "url(img/soleado.jpg)"
+  document.getElementById("body").style.backgroundImage = "url(img/soleado.webp)"
   iconoTiempo.src = 'icono/soleado.png'
   }
  
